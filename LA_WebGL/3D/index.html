@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL 3D</title>
+
+    <script defer src="script.js"></script>
+
+    <style>
+        .flex-h {
+            display: flex;
+            flex-direction: row;
+            width: 800px;
+        }
+
+        .a {
+            flex: 1;
+        }
+
+        .box {
+            text-align: center;
+            padding: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .matrix {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="webgl-canvas" width="400" height="400"></canvas>
+    <div class="flex-h">
+        <div class="a">
+            <p>Translation</p>
+            <div>x<input id="translate-x" type="range" min="-1" max="1" value="0" step="0.001"></div>
+            <div>y<input id="translate-y" type="range" min="-1" max="1" value="0" step="0.001"></div>
+            <div>z<input id="translate-z" type="range" min="-1" max="1" value="0" step="0.001"></div>
+            <p>Translation Matrix</p>
+            <div id="translate-matrix" class="matrix"></div>
+        </div>
+        <div class="a">
+            <p>Rotation</p>
+            <div>x<input id="rotate-x" type="range" min="0" max="1" value="0.1" step="0.001"></div>
+            <div>y<input id="rotate-y" type="range" min="0" max="1" value="0.1" step="0.001"></div>
+            <div>z<input id="rotate-z" type="range" min="0" max="1" value="0" step="0.001"></div>
+            <p>Rotation Matrix</p>
+            <div id="rotate-matrix" class="matrix"></div>
+        </div>
+        <div class="a">
+            <div><p><input id="perspective" type="checkbox">Perspective</input></p></div>
+            <div><input id="p" type="range" min="0" max="1" value="0.25" step="0.001"></div>
+            <p>Projection Matrix</p>
+            <div id="projection-matrix" class="matrix"></div>
+        </div>
+        <div class="a">
+            <p>Resultant Matrix</p>
+            <div id="result-matrix" class="matrix"></div>
+        </div>
+    </div>
+</body>
+
+</html>
